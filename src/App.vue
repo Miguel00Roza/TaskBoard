@@ -3,7 +3,7 @@ import { Plus, X, Pencil, Search } from 'lucide-vue-next';
 import { ref, computed, watch } from 'vue';
 const search = ref('')
 const edit = ref(null)
-const tasks = ref( JSON.parse(localStorage.getItem('tarefas')) ??[
+const tasks = ref( JSON.parse(localStorage.getItem('tasks')) ??[
   {id: 1, desc: 'Study Vuejs', status: 'pending'},
   {id: 2, desc: 'Make todolist', status: 'pending'},
   {id: 3, desc: 'Deploy counter', status: 'done'},
