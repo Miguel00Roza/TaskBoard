@@ -73,7 +73,7 @@ watch(tasks, (newTasks) => {
         </div>
         <span v-if="newTask === ''" style="font-size: 0.7rem; opacity: 50%;">You need to enter something.</span>
         <span v-if="newTask.length > 16" style="font-size: 0.7rem; opacity: 50%;">A task can have a maximum of 16 characters.</span>
-        <div class="divsearch">
+        <div class="divsearch"> <!--Search-->
         <Search :size="20" class="search-icon"/>
         <input
           class="search"
@@ -82,7 +82,7 @@ watch(tasks, (newTasks) => {
           placeholder="Search your task"
         />
         </div>
-        <div>
+        <div> <!--Task show-->
           <ul>
             <li v-for="task in filterTasks" :key="task.id">
               <input class="checkbox" :checked="task.status === 'done'" @click="checkbox(task)" type="checkbox">
@@ -109,10 +109,7 @@ watch(tasks, (newTasks) => {
     font-family: 'Poppins';
   }
   main {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-
+    padding: 2vw;
 }
 
   .taskboard {
@@ -120,8 +117,7 @@ watch(tasks, (newTasks) => {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    width: 100%;
-    max-width: 500px;
+    width: 30vw;
   }
 
   span {
@@ -181,17 +177,18 @@ watch(tasks, (newTasks) => {
   }
   li {
     box-sizing: border-box;
-    border: solid 1px rgba(0, 0, 0, 0.404);
+    border-left: solid 5px rgba(0, 0, 0, 0.322);
     font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 15px;
+    border-radius: 12px;
     gap: 10px;
-    width: 100%;
-    box-shadow: 2px 2px 3px #6d6d6d21;
+    width: 75vw;
+    box-shadow: 2px 2px 3px #0000002d;
     text-align: left;
+    max-width: 100%;
   }
 
   .list {
@@ -209,8 +206,9 @@ watch(tasks, (newTasks) => {
     border: solid 1px rgba(0, 0, 0, 0.432);
     border-radius: 4px;
     margin-top: 20px;
-     padding: 10px 30px 10px 40px;
     transition: 0.2s ease;
+    padding: 10px 0 10px 40px;
+    width: 100%;
   }
   .search:focus {
     outline: none;
@@ -223,9 +221,9 @@ watch(tasks, (newTasks) => {
   }
 
   .divsearch {
-  position: relative;
-  display: flex;
-  align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .search-icon {
@@ -260,5 +258,22 @@ watch(tasks, (newTasks) => {
 .done {
   text-decoration: line-through;
   opacity: 50%;
+  transition: 0.2s ease;
+}
+
+
+@media (max-width: 1024px){
+  .search {
+    border: solid 1px rgba(0, 0, 0, 0.432);
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 10px 100px 10px 40px;
+    transition: 0.2s ease;
+    max-width: 75vw;
+  }
+  .taskboard {
+    width: 100%;
+  }
+
 }
 </style>
