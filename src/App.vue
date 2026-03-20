@@ -3,7 +3,7 @@ import { Plus, X, Pencil, Search } from 'lucide-vue-next';
 import { ref, computed, watch } from 'vue';
 const search = ref('')
 const edit = ref(null)
-const tasks = ref( JSON.parse(localStorage.getItem('tasks')) ??[
+const tasks = ref(JSON.parse(localStorage.getItem('tasks')) ??[
   {id: 1, desc: 'Study Vuejs', status: 'pending'},
   {id: 2, desc: 'Make todolist', status: 'pending'},
   {id: 3, desc: 'Deploy counter', status: 'done'},
@@ -56,7 +56,7 @@ function checkbox(task) {
 }
 
 watch(tasks, (newTasks) => {
-  localStorage.setItem('tarefas', JSON.stringify(newTasks))
+  localStorage.setItem('tasks', JSON.stringify(newTasks))
 }, { deep: true }) //verifica todo tipo de mudança DENTRO do objeto
 
 
