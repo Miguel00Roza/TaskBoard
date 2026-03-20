@@ -66,6 +66,7 @@ watch(tasks, (newTasks) => {
   <main>
     <div class="taskboard">
       <h1>Tasks Board</h1>
+      <p style="font-size: 0.8rem; opacity: 50%;">Your tasks are saved locally in your browser. Close, refresh, or come back later, they'll always be here.</p>
         <div class="input-new-task">
           <input v-model="newTask" class="newtask" type="text" placeholder="Add your task">
           <Plus @click="addTask()" class="plus" color="white" />
@@ -131,6 +132,7 @@ watch(tasks, (newTasks) => {
   h1 {
     font-weight: 700;
     color: #555555;
+    margin: 0;
   }
 
   .input-new-task {
