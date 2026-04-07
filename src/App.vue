@@ -84,7 +84,7 @@ watch(tasks, (newTasks) => {
         </div>
         <div> <!--Task show-->
           <ul>
-            <li :class="{bg: task.status === 'done'}" v-for="task in filterTasks" :key="task.id">
+            <li :class="task.status === 'done' ? 'done' : 'bg'" v-for="task in filterTasks" :key="task.id">
               <input class="checkbox" :checked="task.status === 'done'" @click="checkbox(task)" type="checkbox">
               <span :class="{ done: task.status === 'done' }">{{ task.desc }}</span>
               <div class="icons">
@@ -192,8 +192,7 @@ watch(tasks, (newTasks) => {
     transition: 0.2s ease;
   }
   .bg {
-    border-left: solid 5px rgba(51, 255, 0, 0.445);
-
+    border-left: solid 5px rgb(0, 255, 136);
   }
   .list {
     font-size: 0.8rem;
