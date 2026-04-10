@@ -5,8 +5,8 @@ const props = defineProps({
 })
 </script>
 <template>
-<div :class="">
-  <span></span>
+<div :class="props.status">
+  {{ props.desc }}
 </div>
 </template>
 <style scoped>
